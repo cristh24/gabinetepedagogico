@@ -20,332 +20,523 @@
         .section-title {
             position: relative;
             padding-bottom: 1rem;
+            border-bottom: 3px solid #1e5a96;
         }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 4px;
-            background: linear-gradient(90deg, #1e5a96, #4b9dd9);
-            border-radius: 2px;
+        .sidebar-btn {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            padding-left: 1rem;
+        }
+        .sidebar-btn.active {
+            background-color: #e0e7ff;
+            border-left-color: #1e5a96;
+            color: #0d2c54;
+            font-weight: bold;
+        }
+        .sidebar-btn:hover {
+            background-color: #f0f4ff;
+        }
+        .section-image {
+            min-height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .formal-line {
+            border-top: 2px solid #0d2c54;
+            margin: 2rem 0;
         }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
     <header class="hero-gradient text-white shadow-xl sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-6">
+        <div class="container mx-auto px-6 py-8">
             <div class="flex items-center justify-between">
                 <div>
                     <h1 class="text-4xl font-bold font-serif">Gabinete Pedagógico</h1>
-                    <p class="text-blue-200 mt-1">Universidad Peruana Unión</p>
+                    <p class="text-blue-200 mt-1">Universidad Peruana Unión - Equipo de Innovación Educativa</p>
                 </div>
-                <div class="text-4xl opacity-80">
-                    <i class="fas fa-graduation-cap"></i>
+                <div class="text-5xl opacity-90">
+                    <i class="fas fa-book-open"></i>
                 </div>
             </div>
         </div>
-        <nav class="bg-blue-800 bg-opacity-80 backdrop-blur py-3">
-            <div class="container mx-auto px-6 flex justify-center flex-wrap gap-2 md:gap-6">
-                <a href="#directivas" class="font-semibold hover:bg-blue-700 px-3 py-1 rounded transition">📋 Directivas</a>
-                <a href="#eventos" class="font-semibold hover:bg-blue-700 px-3 py-1 rounded transition">📅 Eventos</a>
-                <a href="#monitoreo" class="font-semibold hover:bg-blue-700 px-3 py-1 rounded transition">👁️ Monitoreo</a>
-                <a href="#faltas" class="font-semibold hover:bg-blue-700 px-3 py-1 rounded transition">⏰ Faltas</a>
-                <a href="#reportes" class="font-semibold hover:bg-blue-700 px-3 py-1 rounded transition">📊 Reportes</a>
-                <a href="#recursos" class="font-semibold hover:bg-blue-700 px-3 py-1 rounded transition">📚 Recursos</a>
-            </div>
-        </nav>
     </header>
 
-    <main class="container mx-auto px-6 py-12">
+    <div class="flex flex-col md:flex-row max-w-7xl mx-auto">
+        <!-- Sidebar de Navegación -->
+        <aside class="w-full md:w-64 bg-white shadow-lg md:min-h-screen p-6 md:sticky md:top-32">
+            <h3 class="text-xl font-bold text-blue-900 mb-6 flex items-center">
+                <i class="fas fa-list-ul mr-2"></i> Secciones
+            </h3>
+            <nav class="space-y-3">
+                <button onclick="scrollToSection('directivas')" class="sidebar-btn w-full text-left py-3 px-4 rounded-lg active">
+                    <i class="fas fa-file-contract mr-2 text-blue-600"></i>
+                    <span>Directivas</span>
+                </button>
+                <button onclick="scrollToSection('eventos')" class="sidebar-btn w-full text-left py-3 px-4 rounded-lg">
+                    <i class="fas fa-calendar-alt mr-2 text-green-600"></i>
+                    <span>Eventos</span>
+                </button>
+                <button onclick="scrollToSection('monitoreo')" class="sidebar-btn w-full text-left py-3 px-4 rounded-lg">
+                    <i class="fas fa-eye mr-2 text-purple-600"></i>
+                    <span>Monitoreo</span>
+                </button>
+                <button onclick="scrollToSection('faltas')" class="sidebar-btn w-full text-left py-3 px-4 rounded-lg">
+                    <i class="fas fa-clock mr-2 text-orange-600"></i>
+                    <span>Faltas y Tardanzas</span>
+                </button>
+                <button onclick="scrollToSection('reportes')" class="sidebar-btn w-full text-left py-3 px-4 rounded-lg">
+                    <i class="fas fa-chart-bar mr-2 text-red-600"></i>
+                    <span>Reportes</span>
+                </button>
+                <button onclick="scrollToSection('recursos')" class="sidebar-btn w-full text-left py-3 px-4 rounded-lg">
+                    <i class="fas fa-book mr-2 text-indigo-600"></i>
+                    <span>Recursos</span>
+                </button>
+            </nav>
+            <div class="formal-line"></div>
+            <div class="bg-blue-50 p-4 rounded-lg">
+                <p class="text-sm text-gray-700 font-semibold mb-2">📞 Contacto Rápido</p>
+                <p class="text-xs text-gray-600">gabinete@upeu.edu.pe</p>
+                <p class="text-xs text-gray-600">+51-1-XXXXXX</p>
+            </div>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="flex-1 px-6 py-12 md:px-12">
         
-        <!-- Sección Directivas y Lineamientos -->
-        <section id="directivas" class="mb-12">
-            <h2 class="text-3xl font-serif text-blue-900 section-title mb-6">Directivas y Lineamientos</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-md card-hover">
-                    <div class="text-4xl text-blue-600 mb-4">📜</div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-3">Normas Institucionales</h3>
-                    <p class="text-gray-700 mb-4">Establecemos las directrices pedagógicas que rigen la actividad académica de la universidad, asegurando la calidad educativa y el cumplimiento de estándares internacionales.</p>
-                    <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition font-semibold">Descargar PDF</button>
+            <!-- Sección Directivas y Lineamientos -->
+            <section id="directivas" class="mb-16 scroll-section">
+                <h2 class="text-4xl font-bold text-blue-900 section-title mb-8">Directivas y Lineamientos</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8 items-center mb-8">
+                    <div class="section-image" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop'); background-size: cover;">
+                    </div>
+                    <div>
+                        <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                            El Gabinete Pedagógico establece directrices claras que rigen la actividad académica de la Universidad Peruana Unión. Nuestras normas institucionales garantizan la calidad educativa y el cumplimiento de estándares internacionales de excelencia.
+                        </p>
+                        <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600">
+                            <h4 class="font-bold text-blue-900 mb-3">Pilares Fundamentales:</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li><i class="fas fa-check text-green-600 mr-2"></i> Excelencia académica</li>
+                                <li><i class="fas fa-check text-green-600 mr-2"></i> Innovación pedagógica</li>
+                                <li><i class="fas fa-check text-green-600 mr-2"></i> Calidad en la docencia</li>
+                            </ul>
+                        </div>
+                        <div class="mt-6">
+                            <button class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition font-semibold shadow-lg">
+                                <i class="fas fa-download mr-2"></i> Descargar Directivas
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-md card-hover">
-                    <div class="text-4xl text-blue-600 mb-4">🎯</div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-3">Objetivos Estratégicos</h3>
-                    <p class="text-gray-700 mb-4">Promover la excelencia educativa, fomentar la innovación pedagógica y garantizar la implementación de buenas prácticas docentes en toda la institución.</p>
-                    <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition font-semibold">Ver Más</button>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Sección Eventos Académicos -->
-        <section id="eventos" class="mb-12">
-            <h2 class="text-3xl font-serif text-blue-900 section-title mb-6">Eventos Académicos</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-lg shadow-md card-hover">
-                    <div class="bg-blue-100 p-4 rounded-lg mb-4 text-center">
-                        <p class="text-3xl font-bold text-blue-900">15</p>
-                        <p class="text-blue-600 font-semibold">Marzo 2026</p>
+            <!-- Sección Eventos Académicos -->
+            <section id="eventos" class="mb-16 scroll-section">
+                <h2 class="text-4xl font-bold text-blue-900 section-title mb-8">Eventos Académicos</h2>
+                
+                <div class="section-image mb-8" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1000&h=400&fit=crop');"></div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg card-hover border-t-4 border-blue-600">
+                        <div class="bg-gradient-to-br from-blue-100 to-blue-50 p-6 rounded-lg mb-4 text-center">
+                            <p class="text-4xl font-bold text-blue-900">15</p>
+                            <p class="text-blue-600 font-semibold">Marzo 2026</p>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Congreso Pedagógico Anual</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">Encuentro de docentes y especialistas en educación para compartir experiencias, tendencias y mejores prácticas.</p>
+                        <div class="flex items-center text-blue-600 font-semibold">
+                            <i class="fas fa-map-marker-alt mr-2"></i> Auditorio Principal
+                        </div>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-800 mb-2">Congreso Pedagógico Anual</h3>
-                    <p class="text-gray-600 mb-4">Encuentro de docentes y especialistas en educación para compartir experiencias y tendencias.</p>
-                    <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">📍 Auditorio Principal</span>
-                </div>
 
-                <div class="bg-white p-6 rounded-lg shadow-md card-hover">
-                    <div class="bg-green-100 p-4 rounded-lg mb-4 text-center">
-                        <p class="text-3xl font-bold text-green-900">22</p>
-                        <p class="text-green-600 font-semibold">Marzo 2026</p>
+                    <div class="bg-white p-8 rounded-lg shadow-lg card-hover border-t-4 border-green-600">
+                        <div class="bg-gradient-to-br from-green-100 to-green-50 p-6 rounded-lg mb-4 text-center">
+                            <p class="text-4xl font-bold text-green-900">22</p>
+                            <p class="text-green-600 font-semibold">Marzo 2026</p>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Taller de Innovación Docente</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">Capacitación integral en tecnologías educativas, metodologías activas y estrategias innovadoras.</p>
+                        <div class="flex items-center text-green-600 font-semibold">
+                            <i class="fas fa-map-marker-alt mr-2"></i> Sala de Conferencias
+                        </div>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-800 mb-2">Taller de Innovación Docente</h3>
-                    <p class="text-gray-600 mb-4">Capacitación en tecnologías educativas y metodologías activas para el aula.</p>
-                    <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">📍 Sala de Conferencias</span>
-                </div>
 
-                <div class="bg-white p-6 rounded-lg shadow-md card-hover">
-                    <div class="bg-purple-100 p-4 rounded-lg mb-4 text-center">
-                        <p class="text-3xl font-bold text-purple-900">28</p>
-                        <p class="text-purple-600 font-semibold">Marzo 2026</p>
+                    <div class="bg-white p-8 rounded-lg shadow-lg card-hover border-t-4 border-purple-600">
+                        <div class="bg-gradient-to-br from-purple-100 to-purple-50 p-6 rounded-lg mb-4 text-center">
+                            <p class="text-4xl font-bold text-purple-900">28</p>
+                            <p class="text-purple-600 font-semibold">Marzo 2026</p>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Evaluación de Desempeño</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">Reuniones de retroalimentación y establecimiento de metas académicas para el semestre.</p>
+                        <div class="flex items-center text-purple-600 font-semibold">
+                            <i class="fas fa-map-marker-alt mr-2"></i> Despachos Administrativos
+                        </div>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-800 mb-2">Evaluación del Desempeño Docente</h3>
-                    <p class="text-gray-600 mb-4">Reuniones de retroalimentación y establecimiento de metas para el semestre.</p>
-                    <span class="inline-block bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">📍 Despachos</span>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Sección Monitoreo -->
-        <section id="monitoreo" class="mb-12">
-            <h2 class="text-3xl font-serif text-blue-900 section-title mb-6">Monitoreo y Acompañamiento</h2>
-            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-lg shadow-md">
-                <div class="grid md:grid-cols-3 gap-8 mb-8">
-                    <div class="text-center">
-                        <div class="text-4xl text-blue-600 mb-2">✅</div>
-                        <h3 class="font-bold text-lg text-blue-900 mb-2">Observación de Aulas</h3>
-                        <p class="text-gray-700">Visitas periódicas para evaluar y mejorar la calidad de la enseñanza.</p>
+            <!-- Sección Monitoreo -->
+            <section id="monitoreo" class="mb-16 scroll-section">
+                <h2 class="text-4xl font-bold text-blue-900 section-title mb-8">Monitoreo y Acompañamiento</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8 items-center mb-8">
+                    <div>
+                        <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                            El monitoreo pedagógico es un proceso sistemático e integral que nos permite identificar fortalezas y oportunidades de mejora en la práctica docente. Proporcionamos acompañamiento personalizado para potenciar la calidad educativa.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start bg-blue-50 p-4 rounded-lg">
+                                <i class="fas fa-check-circle text-blue-600 mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Observación de Aulas</h4>
+                                    <p class="text-sm text-gray-600">Visitas periódicas con evaluación estructurada</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start bg-green-50 p-4 rounded-lg">
+                                <i class="fas fa-check-circle text-green-600 mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Retroalimentación</h4>
+                                    <p class="text-sm text-gray-600">Coaching inmediato y constructivo</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start bg-purple-50 p-4 rounded-lg">
+                                <i class="fas fa-check-circle text-purple-600 mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Seguimiento</h4>
+                                    <p class="text-sm text-gray-600">Monitoreo continuo del progreso</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="text-center">
-                        <div class="text-4xl text-indigo-600 mb-2">💬</div>
-                        <h3 class="font-bold text-lg text-indigo-900 mb-2">Retroalimentación</h3>
-                        <p class="text-gray-700">Reuniones de coaching para potenciar fortalezas y mejorar áreas de desarrollo.</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-4xl text-purple-600 mb-2">📈</div>
-                        <h3 class="font-bold text-lg text-purple-900 mb-2">Seguimiento</h3>
-                        <p class="text-gray-700">Monitoreo continuo del progreso y ejecución de planes de mejora.</p>
-                    </div>
+                    <div class="section-image" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop');"></div>
                 </div>
-                <div class="bg-white p-6 rounded-lg">
-                    <h4 class="font-bold text-lg text-blue-900 mb-4">Procedimiento de Monitoreo</h4>
-                    <ol class="space-y-2 text-gray-700">
-                        <li class="flex items-start"><span class="font-bold text-blue-600 mr-3">1.</span> Programación de visitas de aula</li>
-                        <li class="flex items-start"><span class="font-bold text-blue-600 mr-3">2.</span> Evaluación usando rubrica estandarizada</li>
-                        <li class="flex items-start"><span class="font-bold text-blue-600 mr-3">3.</span> Reunión de retroalimentación inmediata</li>
-                        <li class="flex items-start"><span class="font-bold text-blue-600 mr-3">4.</span> Registro de compromisos de mejora</li>
-                        <li class="flex items-start"><span class="font-bold text-blue-600 mr-3">5.</span> Seguimiento a implementación</li>
-                    </ol>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Sección Faltas y Tardanzas -->
-        <section id="faltas" class="mb-12">
-            <h2 class="text-3xl font-serif text-blue-900 section-title mb-6">Faltas y Tardanzas Docentes</h2>
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <div class="p-6 bg-red-50 border-l-4 border-red-500">
-                    <p class="text-gray-800"><span class="font-bold text-red-700">Política de Asistencia:</span> Los docentes deben mantener una asistencia mínima del 98% con justificación comprobada de ausencias.</p>
+            <!-- Sección Faltas y Tardanzas -->
+            <section id="faltas" class="mb-16 scroll-section">
+                <h2 class="text-4xl font-bold text-blue-900 section-title mb-8">Faltas y Tardanzas Docentes</h2>
+                
+                <div class="section-image mb-8" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1000&h=350&fit=crop');"></div>
+
+                <div class="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-lg mb-8">
+                    <p class="text-gray-800"><span class="font-bold text-orange-700">Política de Asistencia:</span> Los docentes deben mantener una asistencia mínima del 98% con justificación comprobada de ausencias.</p>
                 </div>
-                <div class="overflow-x-auto">
+                
+                <div class="overflow-x-auto bg-white rounded-lg shadow-lg">
                     <table class="w-full">
                         <thead class="bg-blue-900 text-white">
                             <tr>
-                                <th class="p-4 text-left">Tipo de Falta</th>
-                                <th class="p-4 text-left">Descripción</th>
-                                <th class="p-4 text-left">Acciones</th>
+                                <th class="p-4 text-left font-semibold">Tipo de Falta</th>
+                                <th class="p-4 text-left font-semibold">Descripción</th>
+                                <th class="p-4 text-left font-semibold">Acción</th>
+                                <th class="p-4 text-left font-semibold">Observaciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="border-b hover:bg-gray-50">
                                 <td class="p-4 font-semibold text-gray-800">Tardanza ≤ 15 min</td>
                                 <td class="p-4 text-gray-700">Entrada después de la hora permitida</td>
-                                <td class="p-4"><span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Anotación</span></td>
+                                <td class="p-4"><span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">Anotación</span></td>
+                                <td class="p-4 text-gray-600">Registro en sistema</td>
                             </tr>
                             <tr class="border-b hover:bg-gray-50">
                                 <td class="p-4 font-semibold text-gray-800">Tardanza > 15 min</td>
                                 <td class="p-4 text-gray-700">Llegada más de 15 minutos tarde</td>
-                                <td class="p-4"><span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">Falta Media</span></td>
+                                <td class="p-4"><span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-semibold">Falta Media</span></td>
+                                <td class="p-4 text-gray-600">Se reporta a la escuela</td>
                             </tr>
                             <tr class="border-b hover:bg-gray-50">
                                 <td class="p-4 font-semibold text-gray-800">Inasistencia</td>
                                 <td class="p-4 text-gray-700">Ausencia sin justificación comprobada</td>
-                                <td class="p-4"><span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Falta Grave</span></td>
+                                <td class="p-4"><span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-semibold">Falta Grave</span></td>
+                                <td class="p-4 text-gray-600">Justificación de 48 horas</td>
                             </tr>
                             <tr class="hover:bg-gray-50">
                                 <td class="p-4 font-semibold text-gray-800">Abandono de sesión</td>
                                 <td class="p-4 text-gray-700">Salida antes de finalizar la jornada</td>
-                                <td class="p-4"><span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Falta Grave</span></td>
+                                <td class="p-4"><span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-semibold">Falta Grave</span></td>
+                                <td class="p-4 text-gray-600">Requiere autorización</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Sección Reportes -->
-        <section id="reportes" class="mb-12">
-            <h2 class="text-3xl font-serif text-blue-900 section-title mb-6">Reportes Generales</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-white p-6 rounded-lg shadow-md card-hover border-l-4 border-blue-600">
-                    <h3 class="text-lg font-bold text-blue-900 mb-3">📊 Reportes de Desempeño</h3>
-                    <p class="text-gray-700 mb-4">Análisis detallado del desempeño docente con indicadores de calidad educativa.</p>
-                    <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition font-semibold">Generar Reporte</button>
-                </div>
+            <!-- Sección Reportes -->
+            <section id="reportes" class="mb-16 scroll-section">
+                <h2 class="text-4xl font-bold text-blue-900 section-title mb-8">Reportes Generales</h2>
                 
-                <div class="bg-white p-6 rounded-lg shadow-md card-hover border-l-4 border-green-600">
-                    <h3 class="text-lg font-bold text-green-900 mb-3">📈 Estadísticas Académicas</h3>
-                    <p class="text-gray-700 mb-4">Datos estadísticos sobre asistencia, evaluaciones y participación docente.</p>
-                    <button class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition font-semibold">Generar Reporte</button>
-                </div>
+                <div class="section-image mb-8" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1000&h=350&fit=crop');"></div>
 
-                <div class="bg-white p-6 rounded-lg shadow-md card-hover border-l-4 border-purple-600">
-                    <h3 class="text-lg font-bold text-purple-900 mb-3">📋 Reportes de Asistencia</h3>
-                    <p class="text-gray-700 mb-4">Consolidados mensuales y semestrales de faltas, tardanzas e inasistencias.</p>
-                    <button class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition font-semibold">Generar Reporte</button>
-                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg card-hover border-l-4 border-blue-600">
+                        <div class="text-4xl text-blue-600 mb-4">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Reportes de Desempeño</h3>
+                        <p class="text-gray-700 mb-6 leading-relaxed">Análisis detallado del desempeño docente con indicadores de calidad educativa, competencias y metas alcanzadas.</p>
+                        <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition font-semibold">
+                            <i class="fas fa-download mr-2"></i> Generar Reporte
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-lg card-hover border-l-4 border-green-600">
+                        <div class="text-4xl text-green-600 mb-4">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-green-900 mb-3">Estadísticas Académicas</h3>
+                        <p class="text-gray-700 mb-6 leading-relaxed">Datos estadísticos sobre asistencia, evaluaciones, participación docente y tendencias académicas.</p>
+                        <button class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition font-semibold">
+                            <i class="fas fa-download mr-2"></i> Generar Reporte
+                        </button>
+                    </div>
 
-                <div class="bg-white p-6 rounded-lg shadow-md card-hover border-l-4 border-orange-600">
-                    <h3 class="text-lg font-bold text-orange-900 mb-3">📝 Reportes Personalizados</h3>
-                    <p class="text-gray-700 mb-4">Solicita reportes específicos adaptados a tus necesidades de análisis.</p>
-                    <button class="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 transition font-semibold">Solicitar Reporte</button>
-                </div>
-            </div>
-        </section>
+                    <div class="bg-white p-8 rounded-lg shadow-lg card-hover border-l-4 border-purple-600">
+                        <div class="text-4xl text-purple-600 mb-4">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-purple-900 mb-3">Reportes de Asistencia</h3>
+                        <p class="text-gray-700 mb-6 leading-relaxed">Consolidados mensuales y semestrales de faltas, tardanzas e inasistencias por docente o departamento.</p>
+                        <button class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition font-semibold">
+                            <i class="fas fa-download mr-2"></i> Generar Reporte
+                        </button>
+                    </div>
 
-        <!-- Sección Recursos -->
-        <section id="recursos" class="mb-12">
-            <h2 class="text-3xl font-serif text-blue-900 section-title mb-6">Recursos Educativos</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-blue-50 p-6 rounded-lg border-2 border-blue-200 card-hover">
-                    <h3 class="text-lg font-bold text-blue-900 mb-3">📚 Biblioteca Pedagógica</h3>
-                    <p class="text-gray-700 mb-4">Acceso a artículos, libros digitales y material de investigación sobre educación.</p>
-                    <div class="space-y-2">
-                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold flex items-center"><i class="fas fa-download mr-2"></i>Guía de Buenas Prácticas Docentes</a>
-                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold flex items-center"><i class="fas fa-download mr-2"></i>Estrategias de Enseñanza Efectiva</a>
-                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold flex items-center"><i class="fas fa-download mr-2"></i>Evaluación por Competencias</a>
+                    <div class="bg-white p-8 rounded-lg shadow-lg card-hover border-l-4 border-orange-600">
+                        <div class="text-4xl text-orange-600 mb-4">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-orange-900 mb-3">Reportes Personalizados</h3>
+                        <p class="text-gray-700 mb-6 leading-relaxed">Solicita reportes específicos y personalizados adaptados a tus necesidades de análisis único.</p>
+                        <button class="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 transition font-semibold">
+                            <i class="fas fa-plus mr-2"></i> Solicitar Reporte
+                        </button>
                     </div>
                 </div>
+            </section>
 
-                <div class="bg-green-50 p-6 rounded-lg border-2 border-green-200 card-hover">
-                    <h3 class="text-lg font-bold text-green-900 mb-3">🎓 Capacitaciones</h3>
-                    <p class="text-gray-700 mb-4">Programas de formación continua para docentes.</p>
-                    <div class="space-y-2">
-                        <a href="#" class="text-green-600 hover:text-green-800 font-semibold flex items-center"><i class="fas fa-video mr-2"></i>Tecnología en el Aula</a>
-                        <a href="#" class="text-green-600 hover:text-green-800 font-semibold flex items-center"><i class="fas fa-video mr-2"></i>Inteligencia Emocional</a>
-                        <a href="#" class="text-green-600 hover:text-green-800 font-semibold flex items-center"><i class="fas fa-video mr-2"></i>Modelo Pedagógico UPEU</a>
+            <!-- Sección Recursos -->
+            <section id="recursos" class="mb-16 scroll-section">
+                <h2 class="text-4xl font-bold text-blue-900 section-title mb-8">Recursos Educativos</h2>
+                
+                <div class="section-image mb-8" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1000&h=350&fit=crop');"></div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-blue-50 p-8 rounded-lg border-2 border-blue-200 card-hover shadow-lg">
+                        <h3 class="text-lg font-bold text-blue-900 mb-4 flex items-center">
+                            <i class="fas fa-book mr-3 text-blue-600"></i> Biblioteca Pedagógica
+                        </h3>
+                        <p class="text-gray-700 mb-6 leading-relaxed">Acceso a artículos, libros digitales, investigaciones y material especializado sobre educación y pedagogía.</p>
+                        <div class="space-y-3">
+                            <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold flex items-center p-2 hover:bg-blue-100 rounded transition">
+                                <i class="fas fa-file-pdf mr-2"></i> Guía de Buenas Prácticas Docentes
+                            </a>
+                            <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold flex items-center p-2 hover:bg-blue-100 rounded transition">
+                                <i class="fas fa-file-pdf mr-2"></i> Estrategias de Enseñanza Efectiva
+                            </a>
+                            <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold flex items-center p-2 hover:bg-blue-100 rounded transition">
+                                <i class="fas fa-file-pdf mr-2"></i> Evaluación por Competencias
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-green-50 p-8 rounded-lg border-2 border-green-200 card-hover shadow-lg">
+                        <h3 class="text-lg font-bold text-green-900 mb-4 flex items-center">
+                            <i class="fas fa-graduation-cap mr-3 text-green-600"></i> Programas de Capacitación
+                        </h3>
+                        <p class="text-gray-700 mb-6 leading-relaxed">Programas integrales de formación continua y desarrollo profesional para docentes en servicio.</p>
+                        <div class="space-y-3">
+                            <a href="#" class="text-green-600 hover:text-green-800 font-semibold flex items-center p-2 hover:bg-green-100 rounded transition">
+                                <i class="fas fa-video mr-2"></i> Tecnología en el Aula
+                            </a>
+                            <a href="#" class="text-green-600 hover:text-green-800 font-semibold flex items-center p-2 hover:bg-green-100 rounded transition">
+                                <i class="fas fa-video mr-2"></i> Inteligencia Emocional y Educación
+                            </a>
+                            <a href="#" class="text-green-600 hover:text-green-800 font-semibold flex items-center p-2 hover:bg-green-100 rounded transition">
+                                <i class="fas fa-video mr-2"></i> Modelo Pedagógico UPEU
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-purple-50 p-8 rounded-lg border-2 border-purple-200 card-hover shadow-lg">
+                        <h3 class="text-lg font-bold text-purple-900 mb-4 flex items-center">
+                            <i class="fas fa-tools mr-3 text-purple-600"></i> Herramientas y Plataformas
+                        </h3>
+                        <p class="text-gray-700 mb-6 leading-relaxed">Software especializado y plataformas digitales para mejorar la gestión pedagógica y docente.</p>
+                        <div class="space-y-3">
+                            <a href="#" class="text-purple-600 hover:text-purple-800 font-semibold flex items-center p-2 hover:bg-purple-100 rounded transition">
+                                <i class="fas fa-link mr-2"></i> Rubrica de Evaluación Docente
+                            </a>
+                            <a href="#" class="text-purple-600 hover:text-purple-800 font-semibold flex items-center p-2 hover:bg-purple-100 rounded transition">
+                                <i class="fas fa-link mr-2"></i> Matriz de Desempeño
+                            </a>
+                            <a href="#" class="text-purple-600 hover:text-purple-800 font-semibold flex items-center p-2 hover:bg-purple-100 rounded transition">
+                                <i class="fas fa-link mr-2"></i> Portal Docente UPEU
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-indigo-50 p-8 rounded-lg border-2 border-indigo-200 card-hover shadow-lg">
+                        <h3 class="text-lg font-bold text-indigo-900 mb-4 flex items-center">
+                            <i class="fas fa-headset mr-3 text-indigo-600"></i> Centro de Ayuda
+                        </h3>
+                        <p class="text-gray-700 mb-6 leading-relaxed">Soporte técnico y académico para resolver dudas, consultas y proporcionar asistencia.</p>
+                        <div class="space-y-3 text-gray-700">
+                            <p class="flex items-center font-semibold"><i class="fas fa-envelope text-indigo-600 mr-2"></i> gabinete@upeu.edu.pe</p>
+                            <p class="flex items-center font-semibold"><i class="fas fa-phone text-indigo-600 mr-2"></i> +51-1-XXXXXX</p>
+                            <p class="flex items-center font-semibold"><i class="fas fa-map-marker-alt text-indigo-600 mr-2"></i> Pabellón Administrativo</p>
+                            <p class="flex items-center font-semibold"><i class="fas fa-clock text-indigo-600 mr-2"></i> Lunes a Viernes 8am-5pm</p>
+                        </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="bg-purple-50 p-6 rounded-lg border-2 border-purple-200 card-hover">
-                    <h3 class="text-lg font-bold text-purple-900 mb-3">🛠️ Herramientas</h3>
-                    <p class="text-gray-700 mb-4">Software y plataformas para mejorar tu labor docente.</p>
-                    <div class="space-y-2">
-                        <a href="#" class="text-purple-600 hover:text-purple-800 font-semibold flex items-center"><i class="fas fa-link mr-2"></i>Rubrica de Evaluación</a>
-                        <a href="#" class="text-purple-600 hover:text-purple-800 font-semibold flex items-center"><i class="fas fa-link mr-2"></i>Matriz de Desempeño</a>
-                        <a href="#" class="text-purple-600 hover:text-purple-800 font-semibold flex items-center"><i class="fas fa-link mr-2"></i>Portal Docente UPEU</a>
+            <!-- Formulario de Contacto -->
+            <section class="mb-16 bg-gradient-to-r from-blue-900 to-blue-700 text-white p-12 rounded-lg shadow-xl">
+                <h2 class="text-3xl font-bold mb-4 flex items-center">
+                    <i class="fas fa-envelope mr-3"></i> Envía tu Consulta
+                </h2>
+                <p class="text-blue-200 mb-8">¿Tienes dudas o sugerencias? Nos gustaría escucharte.</p>
+                <form class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <input 
+                            type="text" 
+                            placeholder="Tu nombre completo" 
+                            required 
+                            class="p-4 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 font-semibold"
+                        >
+                        <input 
+                            type="email" 
+                            placeholder="Tu correo electrónico" 
+                            required 
+                            class="p-4 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 font-semibold"
+                        >
                     </div>
-                </div>
+                    <select required class="w-full p-4 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 font-semibold">
+                        <option value="">Selecciona el asunto de tu consulta</option>
+                        <option>Consulta sobre directivas</option>
+                        <option>Solicitud de capacitación</option>
+                        <option>Reporte técnico</option>
+                        <option>Sugerencia de mejora</option>
+                        <option>Otro</option>
+                    </select>
+                    <textarea 
+                        placeholder="Tu mensaje..." 
+                        rows="5" 
+                        required 
+                        class="w-full p-4 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 font-semibold resize-none"
+                    ></textarea>
+                    <button 
+                        type="submit" 
+                        class="w-full md:w-auto bg-white text-blue-900 font-bold px-10 py-3 rounded-lg hover:bg-gray-100 transition shadow-lg"
+                    >
+                        <i class="fas fa-paper-plane mr-2"></i> Enviar Mensaje
+                    </button>
+                </form>
+            </section>
 
-                <div class="bg-orange-50 p-6 rounded-lg border-2 border-orange-200 card-hover">
-                    <h3 class="text-lg font-bold text-orange-900 mb-3">📞 Contacto</h3>
-                    <p class="text-gray-700 mb-4">¿Necesitas asistencia o tienes sugerencias?</p>
-                    <div class="space-y-2">
-                        <p class="text-gray-800"><span class="font-semibold">Email:</span> gabinete@upeu.edu.pe</p>
-                        <p class="text-gray-800"><span class="font-semibold">Teléfono:</span> +51-1-XXXXXX</p>
-                        <p class="text-gray-800"><span class="font-semibold">Ubicación:</span> Pabellón Administrativo</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </main>
+    </div>
 
-        <!-- Formulario de Contacto / Consultas -->
-        <section class="mb-12 bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-8 rounded-lg shadow-lg">
-            <h2 class="text-3xl font-bold mb-6">¿Tienes dudas o sugerencias?</h2>
-            <form class="space-y-4" onsubmit="handleSubmit(event)">
-                <div class="grid md:grid-cols-2 gap-4">
-                    <input type="text" placeholder="Tu nombre" required class="p-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300">
-                    <input type="email" placeholder="Tu correo" required class="p-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300">
-                </div>
-                <select required class="w-full p-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300">
-                    <option value="">Selecciona el asunto</option>
-                    <option>Consulta sobre directivas</option>
-                    <option>Solicitud de capacitación</option>
-                    <option>Reporte técnico</option>
-                    <option>Sugerencia de mejora</option>
-                    <option>Otro</option>
-                </select>
-                <textarea placeholder="Tu mensaje..." rows="4" required class="w-full p-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300"></textarea>
-                <button type="submit" class="w-full md:w-auto bg-white text-blue-600 font-bold px-8 py-3 rounded-lg hover:bg-blue-50 transition">Enviar Mensaje</button>
-            </form>
-        </section>
-
-    </main>
-
-    <footer class="bg-blue-900 text-white mt-10 py-10">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
+    <footer class="bg-blue-900 text-white py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-10">
                 <div>
-                    <h3 class="font-bold text-lg mb-4">Gabinete Pedagógico</h3>
-                    <p class="text-blue-200">Mejorando constantemente la calidad educativa de nuestra institución.</p>
+                    <h3 class="font-bold text-2xl mb-4 flex items-center">
+                        <i class="fas fa-building mr-2"></i> Gabinete Pedagógico
+                    </h3>
+                    <p class="text-blue-200 leading-relaxed">Mejorando constantemente la calidad educativa y promoviendo la excelencia académica en la Universidad Peruana Unión.</p>
                 </div>
                 <div>
-                    <h4 class="font-bold mb-4">Enlaces Rápidos</h4>
+                    <h4 class="font-bold text-lg mb-4">Enlaces Rápidos</h4>
                     <ul class="space-y-2 text-blue-200">
-                        <li><a href="#directivas" class="hover:text-white transition">Directivas</a></li>
-                        <li><a href="#eventos" class="hover:text-white transition">Eventos</a></li>
-                        <li><a href="#recursos" class="hover:text-white transition">Recursos</a></li>
+                        <li><a href="#directivas" class="hover:text-white transition flex items-center"><i class="fas fa-angle-right mr-2"></i> Directivas</a></li>
+                        <li><a href="#eventos" class="hover:text-white transition flex items-center"><i class="fas fa-angle-right mr-2"></i> Eventos</a></li>
+                        <li><a href="#monitoreo" class="hover:text-white transition flex items-center"><i class="fas fa-angle-right mr-2"></i> Monitoreo</a></li>
+                        <li><a href="#recursos" class="hover:text-white transition flex items-center"><i class="fas fa-angle-right mr-2"></i> Recursos</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold mb-4">Contacto</h4>
-                    <ul class="space-y-2 text-blue-200">
-                        <li>📧 gabinete@upeu.edu.pe</li>
-                        <li>📱 +51-1-XXXXXX</li>
-                        <li>📍 Pabellón Administrativo</li>
+                    <h4 class="font-bold text-lg mb-4">Información de Contacto</h4>
+                    <ul class="space-y-3 text-blue-200">
+                        <li class="flex items-start"><i class="fas fa-envelope text-blue-400 mr-3 mt-1"></i> gabinete@upeu.edu.pe</li>
+                        <li class="flex items-start"><i class="fas fa-phone text-blue-400 mr-3 mt-1"></i> +51-1-XXXXXX</li>
+                        <li class="flex items-start"><i class="fas fa-map-marker-alt text-blue-400 mr-3 mt-1"></i> Pabellón Administrativo, Lima</li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold mb-4">Síguenos</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-2xl hover:text-blue-300 transition"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-2xl hover:text-blue-300 transition"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-2xl hover:text-blue-300 transition"><i class="fab fa-linkedin"></i></a>
+                    <h4 class="font-bold text-lg mb-4">Síguenos</h4>
+                    <div class="flex gap-4 mb-6">
+                        <a href="#" class="text-blue-300 hover:text-white text-2xl transition"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-blue-300 hover:text-white text-2xl transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-blue-300 hover:text-white text-2xl transition"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-blue-300 hover:text-white text-2xl transition"><i class="fab fa-youtube"></i></a>
                     </div>
+                    <p class="text-xs text-blue-300">Mantente conectado con nuestras últimas noticias y eventos.</p>
                 </div>
             </div>
             <div class="border-t border-blue-800 pt-8 text-center text-blue-200">
-                <p>&copy; 2026 Gabinete Pedagógico - Universidad Peruana Unión. Todos los derechos reservados.</p>
+                <p>&copy; 2026 <span class="font-semibold">Gabinete Pedagógico</span> - Universidad Peruana Unión. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        function handleSubmit(event) {
-            event.preventDefault();
-            alert('¡Mensaje enviado exitosamente! Nos comunicaremos pronto.');
-            event.target.reset();
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                updateSidebarButtons(sectionId);
+            }
         }
 
-        // Smooth scroll para los enlaces de navegación
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
+        function updateSidebarButtons(activeId) {
+            document.querySelectorAll('.sidebar-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`button[onclick="scrollToSection('${activeId}')"]`)?.classList.add('active');
+        }
+
+        // Update sidebar on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.scroll-section');
+            let currentSection = sections[0].id;
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 150) {
+                    currentSection = section.id;
                 }
             });
+            
+            updateSidebarButtons(currentSection);
+        });
+
+        // Smooth scroll para todos los enlaces
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Mensaje enviado exitosamente! Nos comunicaremos pronto.');
+            this.reset();
         });
     </script>
 
