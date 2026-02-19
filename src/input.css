@@ -4,41 +4,28 @@
 
 /* Custom components for reusable styles */
 @layer components {
-  .hero-gradient {
-    @apply bg-gradient-to-br from-primary-dark to-primary-main;
-  }
-
   .card-hover {
     @apply transition-all duration-300 ease-in-out;
   }
 
   .card-hover:hover {
-    @apply -translate-y-1 shadow-2xl;
+    @apply -translate-y-0.5 shadow-lg;
   }
 
   .section-title {
-    @apply relative pb-4 border-b-4 border-primary-main;
+    @apply relative pb-4 border-b-2 border-slate-900;
   }
 
   .sidebar-btn {
-    @apply transition-all duration-300 ease-in-out;
-    border-left: 4px solid transparent;
-    padding-left: 1rem;
+    @apply transition-colors duration-200;
+    @apply text-slate-700 bg-transparent hover:bg-slate-200;
   }
 
   .sidebar-btn.active {
-    @apply bg-primary-light border-l-primary-main text-primary-dark font-bold;
-  }
-
-  .sidebar-btn:hover {
-    @apply bg-indigo-50;
+    @apply bg-slate-900 text-white font-semibold;
   }
 
   .section-image {
-    @apply min-h-[300px] bg-cover bg-center rounded-lg shadow-lg;
-  }
-
-  .formal-line {
-    @apply border-t-2 border-primary-dark my-8;
+    @apply min-h-[300px] bg-cover bg-center rounded border border-slate-200 shadow-sm;
   }
 }
