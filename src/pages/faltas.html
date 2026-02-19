@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faltas y Tardanzas - Gabinete Pedagógico</title>
+    <link rel="stylesheet" href="../../src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-white text-gray-900 font-sans">
+
+    <header class="bg-brand text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <a href="../../index.html" class="hover:opacity-90 transition">
+                        <h1 class="text-3xl font-bold">Gabinete Pedagógico</h1>
+                        <p class="text-white opacity-80 text-sm mt-1">Universidad Peruana Unión - Gestión Académica</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-8 py-12">
+        
+        <div class="mb-8">
+            <a href="../../index.html" class="text-brand hover:opacity-70 transition font-medium text-sm flex items-center mb-6">
+                <i class="fas fa-arrow-left mr-2"></i> Volver al inicio
+            </a>
+        </div>
+
+        <!-- Sección Faltas y Tardanzas -->
+        <section class="mb-16">
+            <h1 class="text-4xl font-bold text-brand mb-8">Faltas y Tardanzas Docentes</h1>
+            
+            <div class="bg-white p-8 rounded border border-brand mb-8">
+                <p class="text-gray-800 text-lg leading-relaxed mb-6">
+                    <strong>Política de Asistencia:</strong> Los docentes deben mantener una asistencia mínima del 98% con justificación comprobada de ausencias. Este compromiso garantiza la continuidad académica y el respeto al calendario institucional.
+                </p>
+            </div>
+
+            <div class="overflow-x-auto bg-white rounded border border-brand">
+                <table class="w-full">
+                    <thead class="bg-brand text-white">
+                        <tr>
+                            <th class="p-4 text-left font-semibold text-sm">Tipo de Falta</th>
+                            <th class="p-4 text-left font-semibold text-sm">Descripción</th>
+                            <th class="p-4 text-left font-semibold text-sm">Acción</th>
+                            <th class="p-4 text-left font-semibold text-sm">Observaciones</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-4 font-semibold text-gray-900">Tardanza ≤ 15 min</td>
+                            <td class="p-4 text-gray-700">Entrada después de la hora permitida</td>
+                            <td class="p-4"><span class="bg-gray-200 text-gray-900 px-3 py-1 rounded text-xs font-semibold">Anotación</span></td>
+                            <td class="p-4 text-gray-600">Registro en sistema</td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-4 font-semibold text-gray-900">Tardanza > 15 min</td>
+                            <td class="p-4 text-gray-700">Llegada más de 15 minutos tarde</td>
+                            <td class="p-4"><span class="bg-gray-100 text-gray-900 px-3 py-1 rounded text-xs font-semibold border border-gray-300">Falta Media</span></td>
+                            <td class="p-4 text-gray-600">Se reporta a la escuela</td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-4 font-semibold text-gray-900">Inasistencia</td>
+                            <td class="p-4 text-gray-700">Ausencia sin justificación comprobada</td>
+                            <td class="p-4"><span class="bg-brand text-white px-3 py-1 rounded text-xs font-semibold">Falta Grave</span></td>
+                            <td class="p-4 text-gray-600">Justificación de 48 horas</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-4 font-semibold text-gray-900">Abandono de sesión</td>
+                            <td class="p-4 text-gray-700">Salida antes de finalizar la jornada</td>
+                            <td class="p-4"><span class="bg-brand text-white px-3 py-1 rounded text-xs font-semibold">Falta Grave</span></td>
+                            <td class="p-4 text-gray-600">Requiere autorización</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mt-8 p-6 bg-gray-50 rounded border border-brand">
+                <h3 class="text-lg font-semibold text-brand mb-3">Procedimiento de Justificación</h3>
+                <ul class="space-y-2 text-gray-700">
+                    <li>• Las faltas deben justificarse en un plazo máximo de 48 horas</li>
+                    <li>• Se requiere documentación válida (comprobante médico, certificado, etc.)</li>
+                    <li>• El Gabinete Pedagógico evaluará cada caso de forma individual</li>
+                    <li>• Tres inasistencias sin justificación pueden resultar en proceso disciplinario</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-brand text-white py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-10">
+                <div>
+                    <h3 class="font-bold text-xl mb-4">Gabinete Pedagógico</h3>
+                    <p class="text-white opacity-75 leading-relaxed text-sm">Mejorando constantemente la calidad educativa y promoviendo la excelencia académica en la Universidad Peruana Unión.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 text-white opacity-75 text-sm">
+                        <li><a href="../../index.html#directivas" class="text-white opacity-75 hover:text-brand transition">Directivas</a></li>
+                        <li><a href="../../index.html#eventos" class="text-white opacity-75 hover:text-brand transition">Eventos</a></li>
+                        <li><a href="../../index.html#monitoreo" class="text-white opacity-75 hover:text-brand transition">Monitoreo</a></li>
+                        <li><a href="../../index.html#recursos" class="text-white opacity-75 hover:text-brand transition">Recursos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-white opacity-75 text-sm">
+                        <li>gabinete@upeu.edu.pe</li>
+                        <li>+51-1-XXXXXX</li>
+                        <li>Pabellón Administrativo, Lima</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Síguenos</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-white opacity-75 hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white opacity-75 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white opacity-75 hover:text-white transition"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-white opacity-75 hover:text-white transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white border-opacity-20 pt-8 text-center text-white opacity-75 text-sm">
+                <p>&copy; 2026 Gabinete Pedagógico - Universidad Peruana Unión. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../src/js/main.js"></script>
+</body>
+</html>

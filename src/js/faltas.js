@@ -1,12 +1,15 @@
 // Faltas Section Module
 
 export function setupFaltasSection() {
-    const faltasLink = document.querySelector('[data-section="faltas"]');
+    const faltasCard = document.getElementById('faltas-card');
     
-    if (faltasLink) {
-        faltasLink.addEventListener('click', () => {
+    if (faltasCard) {
+        faltasCard.addEventListener('click', () => {
             window.location.href = 'src/pages/faltas.html';
         });
+        
+        // Add cursor pointer on hover
+        faltasCard.style.cursor = 'pointer';
     }
 }
 

@@ -1,17 +1,16 @@
 // Recursos Section Module
 
 export function setupRecursosSection() {
-    const recursosLinks = document.querySelectorAll('[data-recurso-link]');
+    const recursosCard = document.getElementById('recursos-card');
     
-    recursosLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const recursoLink = this.getAttribute('data-recurso-link');
-            if (recursoLink && recursoLink !== '#') {
-                e.preventDefault();
-                window.location.href = recursoLink;
-            }
+    if (recursosCard) {
+        recursosCard.addEventListener('click', () => {
+            window.location.href = 'src/pages/recursos.html';
         });
-    });
+        
+        // Add cursor pointer on hover
+        recursosCard.style.cursor = 'pointer';
+    }
 }
 
 // Call on DOM ready

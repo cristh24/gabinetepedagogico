@@ -1,14 +1,16 @@
 // Reportes Section Module
 
 export function setupReportesSection() {
-    const reportesButtons = document.querySelectorAll('[data-report-type]');
+    const reportesCard = document.getElementById('reportes-card');
     
-    reportesButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const reportType = this.getAttribute('data-report-type');
-            window.location.href = `src/pages/reporte-${reportType}.html`;
+    if (reportesCard) {
+        reportesCard.addEventListener('click', () => {
+            window.location.href = 'src/pages/reportes.html';
         });
-    });
+        
+        // Add cursor pointer on hover
+        reportesCard.style.cursor = 'pointer';
+    }
 }
 
 // Call on DOM ready

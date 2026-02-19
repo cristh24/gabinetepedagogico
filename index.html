@@ -27,24 +27,24 @@
                 Secciones
             </h3>
             <nav class="space-y-1">
-                <button onclick="scrollToSection('directivas')" class="sidebar-btn w-full text-left py-2 px-3 rounded text-sm font-medium active">
+                <a href="src/pages/directivas.html" class="sidebar-btn w-full text-left py-2 px-3 rounded text-sm font-medium block hover:bg-blue-100 transition">
                     Directivas
-                </button>
-                <button onclick="scrollToSection('eventos')" class="sidebar-btn w-full text-left py-2 px-3 rounded text-sm font-medium">
+                </a>
+                <a href="src/pages/eventos.html" class="sidebar-btn w-full text-left py-2 px-3 rounded text-sm font-medium block hover:bg-blue-100 transition">
                     Eventos
-                </button>
-                <button onclick="scrollToSection('monitoreo')" class="sidebar-btn w-full text-left py-2 px-3 rounded text-sm font-medium">
+                </a>
+                <a href="src/pages/monitoreo.html" class="sidebar-btn w-full text-left py-2 px-3 rounded text-sm font-medium block hover:bg-blue-100 transition">
                     Monitoreo
-                </button>
-                <button onclick="scrollToSection('faltas')" class="sidebar-btn w-full text-left py-2 px-3 rounded text-sm font-medium">
+                </a>
+                <a href="src/pages/faltas.html" class="sidebar-btn w-full text-left py-2 px-3 rounded text-sm font-medium block hover:bg-blue-100 transition">
                     Faltas y Tardanzas
-                </button>
-                <button onclick="scrollToSection('reportes')" class="sidebar-btn w-full text-left py-2 px-3 rounded text-sm font-medium">
+                </a>
+                <a href="src/pages/reportes.html" class="sidebar-btn w-full text-left py-2 px-3 rounded text-sm font-medium block hover:bg-blue-100 transition">
                     Reportes
-                </button>
-                <button onclick="scrollToSection('recursos')" class="sidebar-btn w-full text-left py-2 px-3 rounded text-sm font-medium">
+                </a>
+                <a href="src/pages/recursos.html" class="sidebar-btn w-full text-left py-2 px-3 rounded text-sm font-medium block hover:bg-blue-100 transition">
                     Recursos
-                </button>
+                </a>
             </nav>
             <div class="border-t border-slate-200 my-6"></div>
             <div class="bg-white p-4 rounded border border-brand">
@@ -57,263 +57,94 @@
         <!-- Contenido Principal -->
         <main class="flex-1 px-8 py-12">
         
-            <!-- Sección Directivas y Lineamientos -->
-            <section id="directivas" class="mb-16 scroll-section">
-                <h2 class="text-3xl font-bold text-brand section-title mb-8">Directivas y Lineamientos</h2>
+            <div class="mb-16">
+                <h2 class="text-4xl font-bold text-brand mb-2">Secciones Principales</h2>
+                <p class="text-gray-600 text-lg">Accede a cada sección para consultar información detallada</p>
+            </div>
+
+            <!-- Grid de Tarjetas de Navegación -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                 
-                <div id="directivas-card" class="bg-white p-6 rounded border border-brand shadow-sm card-hover cursor-pointer hover:shadow-md transition">
-                    <div class="grid md:grid-cols-2 gap-6 items-center">
-                        <div class="section-image h-64" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop'); background-size: cover;"></div>
-                        <div>
-                            <p class="text-gray-700 leading-relaxed text-base">
-                                El Gabinete Pedagógico establece directrices claras que rigen la actividad académica de la Universidad Peruana Unión. Nuestras normas institucionales garantizan la calidad educativa y el cumplimiento de estándares internacionales de excelencia.
-                            </p>
-                            <p class="text-brand font-semibold mt-4 flex items-center">
-                                Ver más <i class="fas fa-arrow-right ml-2"></i>
-                            </p>
-                        </div>
+                <!-- Tarjeta Directivas -->
+                <div id="directivas-card" class="bg-white p-8 rounded border border-brand shadow-md hover:shadow-lg hover:border-opacity-80 transition cursor-pointer">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-lg bg-gray-100 mb-4">
+                        <i class="fas fa-file-alt text-brand text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-brand mb-3">Directivas y Lineamientos</h3>
+                    <p class="text-gray-700 mb-6 text-sm leading-relaxed">Consulta las directrices institucionales que rigen la actividad académica de la Universidad Peruana Unión.</p>
+                    <div class="flex items-center text-brand font-medium text-sm">
+                        Ver más <i class="fas fa-arrow-right ml-2"></i>
                     </div>
                 </div>
-            </section>
 
-            <!-- Sección Eventos Académicos -->
-            <section id="eventos" class="mb-16 scroll-section">
-                <h2 class="text-3xl font-bold text-brand section-title mb-8">Eventos Académicos</h2>
-                
-                <div class="section-image mb-8" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1000&h=400&fit=crop');"></div>
-                
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-white p-6 rounded border border-brand shadow-sm card-hover">
-                        <div class="mb-4 pb-4 border-b border-brand">
-                            <p class="text-2xl font-bold text-brand">15 de Marzo</p>
-                        </div>
-                        <h3 class="text-lg font-semibold text-slate-900 mb-3">Congreso Pedagógico Anual</h3>
-                        <p class="text-slate-700 mb-4 text-sm leading-relaxed">Encuentro de docentes y especialistas en educación para compartir experiencias y mejores prácticas.</p>
-                        <p class="text-slate-600 text-sm">Auditorio Principal</p>
+                <!-- Tarjeta Eventos -->
+                <div id="eventos-card" class="bg-white p-8 rounded border border-brand shadow-md hover:shadow-lg hover:border-opacity-80 transition cursor-pointer">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-lg bg-gray-100 mb-4">
+                        <i class="fas fa-calendar-alt text-brand text-2xl"></i>
                     </div>
-
-                    <div class="bg-white p-6 rounded border border-brand shadow-sm card-hover">
-                        <div class="mb-4 pb-4 border-b border-brand">
-                            <p class="text-2xl font-bold text-brand">22 de Marzo</p>
-                        </div>
-                        <h3 class="text-lg font-semibold text-slate-900 mb-3">Taller de Innovación Docente</h3>
-                        <p class="text-slate-700 mb-4 text-sm leading-relaxed">Capacitación integral en tecnologías educativas y estrategias innovadoras de enseñanza.</p>
-                        <p class="text-slate-600 text-sm">Sala de Conferencias</p>
-                    </div>
-
-                    <div class="bg-white p-6 rounded border border-brand shadow-sm card-hover">
-                        <div class="mb-4 pb-4 border-b border-brand">
-                            <p class="text-2xl font-bold text-brand">28 de Marzo</p>
-                        </div>
-                        <h3 class="text-lg font-semibold text-slate-900 mb-3">Evaluación de Desempeño</h3>
-                        <p class="text-slate-700 mb-4 text-sm leading-relaxed">Reuniones de retroalimentación y establecimiento de metas académicas para el semestre.</p>
-                        <p class="text-slate-600 text-sm">Despachos Administrativos</p>
+                    <h3 class="text-xl font-semibold text-brand mb-3">Eventos Académicos</h3>
+                    <p class="text-gray-700 mb-6 text-sm leading-relaxed">Consulta los eventos, talleres y congreso pedagógico programados durante el año.</p>
+                    <div class="flex items-center text-brand font-medium text-sm">
+                        Ver más <i class="fas fa-arrow-right ml-2"></i>
                     </div>
                 </div>
-            </section>
 
-            <!-- Sección Monitoreo -->
-            <section id="monitoreo" class="mb-16 scroll-section">
-                <h2 class="text-3xl font-bold text-brand section-title mb-8">Monitoreo y Acompañamiento</h2>
-                
-                <div class="grid md:grid-cols-2 gap-8 items-center mb-8">
-                    <div>
-                        <p class="text-gray-700 leading-relaxed mb-6 text-lg">
-                            El monitoreo pedagógico es un proceso sistemático e integral que nos permite identificar fortalezas y oportunidades de mejora en la práctica docente. Proporcionamos acompañamiento personalizado para potenciar la calidad educativa.
-                        </p>
-                        <div class="space-y-3">
-                            <div class="flex items-start bg-blue-50 p-4 rounded">
-                                <span class="text-brand font-bold mr-4 mt-0.5">•</span>
-                                <div>
-                                    <h4 class="font-semibold text-brand text-sm">Observación de Aulas</h4>
-                                    <p class="text-xs text-slate-600 mt-1">Visitas periódicas con evaluación estructurada</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start bg-blue-50 p-4 rounded">
-                                <span class="text-brand font-bold mr-4 mt-0.5">•</span>
-                                <div>
-                                    <h4 class="font-semibold text-brand text-sm">Retroalimentación</h4>
-                                    <p class="text-xs text-slate-600 mt-1">Coaching inmediato y constructivo</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start bg-blue-50 p-4 rounded">
-                                <span class="text-brand font-bold mr-4 mt-0.5">•</span>
-                                <div>
-                                    <h4 class="font-semibold text-brand text-sm">Seguimiento</h4>
-                                    <p class="text-xs text-slate-600 mt-1">Monitoreo continuo del progreso</p>
-                                </div>
-                            </div>
-                        </div>
+                <!-- Tarjeta Monitoreo -->
+                <div id="monitoreo-card" class="bg-white p-8 rounded border border-brand shadow-md hover:shadow-lg hover:border-opacity-80 transition cursor-pointer">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-lg bg-gray-100 mb-4">
+                        <i class="fas fa-binoculars text-brand text-2xl"></i>
                     </div>
-                    <div class="section-image" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop');"></div>
-                </div>
-            </section>
-
-            <!-- Sección Faltas y Tardanzas -->
-            <section id="faltas" class="mb-16 scroll-section">
-                <h2 class="text-3xl font-bold text-brand section-title mb-8">Faltas y Tardanzas Docentes</h2>
-                
-                <div class="section-image mb-8" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1000&h=350&fit=crop');"></div>
-
-                <div class="bg-blue-50 border-l-2 border-brand p-6 rounded mb-8">
-                    <p class="text-slate-800 text-sm"><span class="font-semibold text-brand">Política de Asistencia:</span> Los docentes deben mantener una asistencia mínima del 98% con justificación comprobada de ausencias.</p>
-                </div>
-                
-                <div class="overflow-x-auto bg-white rounded border border-brand">
-                    <table class="w-full">
-                        <thead class="bg-brand text-white">
-                            <tr>
-                                <th class="p-4 text-left font-semibold text-sm">Tipo de Falta</th>
-                                <th class="p-4 text-left font-semibold text-sm">Descripción</th>
-                                <th class="p-4 text-left font-semibold text-sm">Acción</th>
-                                <th class="p-4 text-left font-semibold text-sm">Observaciones</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-sm">
-                            <tr class="border-b hover:bg-blue-50">
-                                <td class="p-4 font-semibold text-slate-900">Tardanza ≤ 15 min</td>
-                                <td class="p-4 text-slate-700">Entrada después de la hora permitida</td>
-                                <td class="p-4"><span class="bg-blue-100 text-brand px-3 py-1 rounded text-xs font-semibold">Anotación</span></td>
-                                <td class="p-4 text-slate-600">Registro en sistema</td>
-                            </tr>
-                            <tr class="border-b hover:bg-blue-50">
-                                <td class="p-4 font-semibold text-slate-900">Tardanza > 15 min</td>
-                                <td class="p-4 text-slate-700">Llegada más de 15 minutos tarde</td>
-                                <td class="p-4"><span class="bg-blue-200 text-brand px-3 py-1 rounded text-xs font-semibold">Falta Media</span></td>
-                                <td class="p-4 text-slate-600">Se reporta a la escuela</td>
-                            </tr>
-                            <tr class="border-b hover:bg-blue-50">
-                                <td class="p-4 font-semibold text-slate-900">Inasistencia</td>
-                                <td class="p-4 text-slate-700">Ausencia sin justificación comprobada</td>
-                                <td class="p-4"><span class="bg-brand text-white px-3 py-1 rounded text-xs font-semibold">Falta Grave</span></td>
-                                <td class="p-4 text-slate-600">Justificación de 48 horas</td>
-                            </tr>
-                            <tr class="hover:bg-blue-50">
-                                <td class="p-4 font-semibold text-slate-900">Abandono de sesión</td>
-                                <td class="p-4 text-slate-700">Salida antes de finalizar la jornada</td>
-                                <td class="p-4"><span class="bg-brand text-white px-3 py-1 rounded text-xs font-semibold">Falta Grave</span></td>
-                                <td class="p-4 text-slate-600">Requiere autorización</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <!-- Sección Reportes -->
-            <section id="reportes" class="mb-16 scroll-section">
-                <h2 class="text-3xl font-bold text-brand section-title mb-8">Reportes Generales</h2>
-                
-                <div class="section-image mb-8" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1000&h=350&fit=crop');"></div>
-
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-white p-6 rounded border border-brand shadow-sm card-hover">
-                        <h3 class="text-lg font-semibold text-brand mb-3">Reportes de Desempeño</h3>
-                        <p class="text-slate-700 mb-6 text-sm leading-relaxed">Análisis detallado del desempeño docente con indicadores de calidad educativa, competencias y metas alcanzadas.</p>
-                        <button class="bg-brand text-white px-4 py-2 rounded hover:opacity-90 transition font-medium text-sm">
-                            Generar Reporte
-                        </button>
-                    </div>
-                    
-                    <div class="bg-white p-6 rounded border border-brand shadow-sm card-hover">
-                        <h3 class="text-lg font-semibold text-brand mb-3">Estadísticas Académicas</h3>
-                        <p class="text-slate-700 mb-6 text-sm leading-relaxed">Datos estadísticos sobre asistencia, evaluaciones, participación docente y tendencias académicas.</p>
-                        <button class="bg-brand text-white px-4 py-2 rounded hover:opacity-90 transition font-medium text-sm">
-                            Generar Reporte
-                        </button>
-                    </div>
-
-                    <div class="bg-white p-6 rounded border border-brand shadow-sm card-hover">
-                        <h3 class="text-lg font-semibold text-brand mb-3">Reportes de Asistencia</h3>
-                        <p class="text-slate-700 mb-6 text-sm leading-relaxed">Consolidados mensuales y semestrales de faltas, tardanzas e inasistencias por docente o departamento.</p>
-                        <button class="bg-brand text-white px-4 py-2 rounded hover:opacity-90 transition font-medium text-sm">
-                            Generar Reporte
-                        </button>
-                    </div>
-
-                    <div class="bg-white p-6 rounded border border-brand shadow-sm card-hover">
-                        <h3 class="text-lg font-semibold text-brand mb-3">Reportes Personalizados</h3>
-                        <p class="text-slate-700 mb-6 text-sm leading-relaxed">Solicita reportes específicos y personalizados adaptados a tus necesidades de análisis único.</p>
-                        <button class="bg-brand text-white px-4 py-2 rounded hover:opacity-90 transition font-medium text-sm">
-                            Solicitar Reporte
-                        </button>
+                    <h3 class="text-xl font-semibold text-brand mb-3">Monitoreo y Acompañamiento</h3>
+                    <p class="text-gray-700 mb-6 text-sm leading-relaxed">Información sobre procesos de monitoreo pedagógico y acompañamiento a docentes.</p>
+                    <div class="flex items-center text-brand font-medium text-sm">
+                        Ver más <i class="fas fa-arrow-right ml-2"></i>
                     </div>
                 </div>
-            </section>
 
-            <!-- Sección Recursos -->
-            <section id="recursos" class="mb-16 scroll-section">
-                <h2 class="text-3xl font-bold text-brand section-title mb-8">Recursos Educativos</h2>
-                
-                <div class="section-image mb-8" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1000&h=350&fit=crop');"></div>
-
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-white p-6 rounded border border-brand shadow-sm card-hover">
-                        <h3 class="text-lg font-semibold text-brand mb-4">Biblioteca Pedagógica</h3>
-                        <p class="text-slate-700 mb-4 text-sm leading-relaxed">Acceso a artículos, libros digitales, investigaciones y material especializado sobre educación y pedagogía.</p>
-                        <div class="space-y-2">
-                            <a href="#" class="text-slate-700 hover:text-brand text-sm flex items-center p-2 hover:bg-blue-50 rounded transition">
-                                • Guía de Buenas Prácticas Docentes
-                            </a>
-                            <a href="#" class="text-slate-700 hover:text-brand text-sm flex items-center p-2 hover:bg-blue-50 rounded transition">
-                                • Estrategias de Enseñanza Efectiva
-                            </a>
-                            <a href="#" class="text-slate-700 hover:text-brand text-sm flex items-center p-2 hover:bg-blue-50 rounded transition">
-                                • Evaluación por Competencias
-                            </a>
-                        </div>
+                <!-- Tarjeta Faltas -->
+                <div id="faltas-card" class="bg-white p-8 rounded border border-brand shadow-md hover:shadow-lg hover:border-opacity-80 transition cursor-pointer">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-lg bg-gray-100 mb-4">
+                        <i class="fas fa-clock text-brand text-2xl"></i>
                     </div>
-
-                    <div class="bg-white p-6 rounded border border-brand shadow-sm card-hover">
-                        <h3 class="text-lg font-semibold text-brand mb-4">Programas de Capacitación</h3>
-                        <p class="text-slate-700 mb-4 text-sm leading-relaxed">Programas integrales de formación profesional para docentes en servicio.</p>
-                        <div class="space-y-2">
-                            <a href="#" class="text-slate-700 hover:text-brand text-sm flex items-center p-2 hover:bg-blue-50 rounded transition">
-                                • Tecnología en el Aula
-                            </a>
-                            <a href="#" class="text-slate-700 hover:text-brand text-sm flex items-center p-2 hover:bg-blue-50 rounded transition">
-                                • Inteligencia Emocional y Educación
-                            </a>
-                            <a href="#" class="text-slate-700 hover:text-brand text-sm flex items-center p-2 hover:bg-blue-50 rounded transition">
-                                • Modelo Pedagógico UPEU
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="bg-white p-6 rounded border border-brand shadow-sm card-hover">
-                        <h3 class="text-lg font-semibold text-brand mb-4">Herramientas y Plataformas</h3>
-                        <p class="text-slate-700 mb-4 text-sm leading-relaxed">Software especializado para mejorar la gestión pedagógica y docente.</p>
-                        <div class="space-y-2">
-                            <a href="#" class="text-slate-700 hover:text-brand text-sm flex items-center p-2 hover:bg-blue-50 rounded transition">
-                                • Rubrica de Evaluación Docente
-                            </a>
-                            <a href="#" class="text-slate-700 hover:text-brand text-sm flex items-center p-2 hover:bg-blue-50 rounded transition">
-                                • Matriz de Desempeño
-                            </a>
-                            <a href="#" class="text-slate-700 hover:text-brand text-sm flex items-center p-2 hover:bg-blue-50 rounded transition">
-                                • Portal Docente UPEU
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="bg-white p-6 rounded border border-brand shadow-sm card-hover">
-                        <h3 class="text-lg font-semibold text-brand mb-4">Centro de Ayuda</h3>
-                        <p class="text-slate-700 mb-4 text-sm leading-relaxed">Soporte técnico y académico para resolver dudas y consultas.</p>
-                        <div class="space-y-2 text-slate-700 text-sm">
-                            <p>gabinete@upeu.edu.pe</p>
-                            <p>+51-1-XXXXXX</p>
-                            <p>Pabellón Administrativo</p>
-                            <p>Lunes a Viernes 8am-5pm</p>
-                        </div>
+                    <h3 class="text-xl font-semibold text-brand mb-3">Faltas y Tardanzas</h3>
+                    <p class="text-gray-700 mb-6 text-sm leading-relaxed">Consulta la política de asistencia y la clasificación de faltas y tardanzas docentes.</p>
+                    <div class="flex items-center text-brand font-medium text-sm">
+                        Ver más <i class="fas fa-arrow-right ml-2"></i>
                     </div>
                 </div>
-            </section>
+
+                <!-- Tarjeta Reportes -->
+                <div id="reportes-card" class="bg-white p-8 rounded border border-brand shadow-md hover:shadow-lg hover:border-opacity-80 transition cursor-pointer">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-lg bg-gray-100 mb-4">
+                        <i class="fas fa-chart-bar text-brand text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-brand mb-3">Reportes Generales</h3>
+                    <p class="text-gray-700 mb-6 text-sm leading-relaxed">Accede a diferentes tipos de reportes: desempeño, estadísticas, asistencia y personalizados.</p>
+                    <div class="flex items-center text-brand font-medium text-sm">
+                        Ver más <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Recursos -->
+                <div id="recursos-card" class="bg-white p-8 rounded border border-brand shadow-md hover:shadow-lg hover:border-opacity-80 transition cursor-pointer">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-lg bg-gray-100 mb-4">
+                        <i class="fas fa-book text-brand text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-brand mb-3">Recursos Educativos</h3>
+                    <p class="text-gray-700 mb-6 text-sm leading-relaxed">Biblioteca pedagógica, programas de capacitación, herramientas y centro de ayuda.</p>
+                    <div class="flex items-center text-brand font-medium text-sm">
+                        Ver más <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </div>
+
+            </div>
 
             <!-- Formulario de Contacto -->
             <section class="mb-16 bg-brand text-white p-12 rounded shadow">
                 <h2 class="text-2xl font-bold mb-2">
                     Comunicación Oficial
                 </h2>
-                <p class="text-gray-500 mb-8 text-sm">Complete el formulario para contactar con el Gabinete Pedagógico.</p>
+                <p class="text-gray-300 mb-8 text-sm">Complete el formulario para contactar con el Gabinete Pedagógico.</p>
                 <form class="space-y-4">
                     <div class="grid md:grid-cols-2 gap-4">
                         <input 
@@ -367,10 +198,12 @@
                 <div>
                     <h4 class="font-semibold mb-4">Enlaces Rápidos</h4>
                     <ul class="space-y-2 text-gray-700 text-sm">
-                        <li><a href="#directivas" class="text-gray-700 hover:text-brand transition">Directivas</a></li>
-                        <li><a href="#eventos" class="text-gray-700 hover:text-brand transition">Eventos</a></li>
-                        <li><a href="#monitoreo" class="text-gray-700 hover:text-brand transition">Monitoreo</a></li>
-                        <li><a href="#recursos" class="text-gray-700 hover:text-brand transition">Recursos</a></li>
+                        <li><a href="src/pages/directivas.html" class="text-gray-700 hover:text-brand transition">Directivas</a></li>
+                        <li><a href="src/pages/eventos.html" class="text-gray-700 hover:text-brand transition">Eventos</a></li>
+                        <li><a href="src/pages/monitoreo.html" class="text-gray-700 hover:text-brand transition">Monitoreo</a></li>
+                        <li><a href="src/pages/faltas.html" class="text-gray-700 hover:text-brand transition">Faltas</a></li>
+                        <li><a href="src/pages/reportes.html" class="text-gray-700 hover:text-brand transition">Reportes</a></li>
+                        <li><a href="src/pages/recursos.html" class="text-gray-700 hover:text-brand transition">Recursos</a></li>
                     </ul>
                 </div>
                 <div>

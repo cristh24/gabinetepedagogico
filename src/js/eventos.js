@@ -1,16 +1,16 @@
 // Eventos Section Module
 
 export function setupEventosSection() {
-    const eventosCards = document.querySelectorAll('[data-event-id]');
+    const eventosCard = document.getElementById('eventos-card');
     
-    eventosCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const eventId = this.getAttribute('data-event-id');
-            window.location.href = `src/pages/evento-${eventId}.html`;
+    if (eventosCard) {
+        eventosCard.addEventListener('click', () => {
+            window.location.href = 'src/pages/eventos.html';
         });
         
-        this.style.cursor = 'pointer';
-    });
+        // Add cursor pointer on hover
+        eventosCard.style.cursor = 'pointer';
+    }
 }
 
 // Call on DOM ready

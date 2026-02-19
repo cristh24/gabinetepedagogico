@@ -1,12 +1,15 @@
 // Monitoreo Section Module
 
 export function setupMonitoreoSection() {
-    const monitoreoLink = document.querySelector('[data-section="monitoreo"]');
+    const monitoreoCard = document.getElementById('monitoreo-card');
     
-    if (monitoreoLink) {
-        monitoreoLink.addEventListener('click', () => {
+    if (monitoreoCard) {
+        monitoreoCard.addEventListener('click', () => {
             window.location.href = 'src/pages/monitoreo.html';
         });
+        
+        // Add cursor pointer on hover
+        monitoreoCard.style.cursor = 'pointer';
     }
 }
 
