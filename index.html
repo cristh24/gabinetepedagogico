@@ -61,25 +61,16 @@
             <section id="directivas" class="mb-16 scroll-section">
                 <h2 class="text-3xl font-bold text-brand section-title mb-8">Directivas y Lineamientos</h2>
                 
-                <div class="grid md:grid-cols-2 gap-8 items-center mb-8">
-                    <div class="section-image" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop'); background-size: cover;">
-                    </div>
-                    <div>
-                        <p class="text-gray-700 leading-relaxed mb-6 text-lg">
-                            El Gabinete Pedagógico establece directrices claras que rigen la actividad académica de la Universidad Peruana Unión. Nuestras normas institucionales garantizan la calidad educativa y el cumplimiento de estándares internacionales de excelencia.
-                        </p>
-                        <div class="bg-blue-50 p-6 rounded border-l-2 border-brand">
-                            <h4 class="font-semibold text-brand mb-3">Pilares Fundamentales</h4>
-                            <ul class="space-y-2 text-slate-700 text-sm">
-                                <li>• Excelencia académica</li>
-                                <li>• Innovación pedagógica</li>
-                                <li>• Calidad en la docencia</li>
-                            </ul>
-                        </div>
-                        <div class="mt-6">
-                            <button class="bg-brand text-white px-6 py-2 rounded hover:opacity-90 transition font-medium text-sm">
-                                Descargar Directivas
-                            </button>
+                <div id="directivas-card" class="bg-white p-6 rounded border border-brand shadow-sm card-hover cursor-pointer hover:shadow-md transition">
+                    <div class="grid md:grid-cols-2 gap-6 items-center">
+                        <div class="section-image h-64" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop'); background-size: cover;"></div>
+                        <div>
+                            <p class="text-gray-700 leading-relaxed text-base">
+                                El Gabinete Pedagógico establece directrices claras que rigen la actividad académica de la Universidad Peruana Unión. Nuestras normas institucionales garantizan la calidad educativa y el cumplimiento de estándares internacionales de excelencia.
+                            </p>
+                            <p class="text-brand font-semibold mt-4 flex items-center">
+                                Ver más <i class="fas fa-arrow-right ml-2"></i>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -406,58 +397,14 @@
         </div>
     </footer>
 
-    <script>
-        function scrollToSection(sectionId) {
-            const element = document.getElementById(sectionId);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-                updateSidebarButtons(sectionId);
-            }
-        }
-
-        function updateSidebarButtons(activeId) {
-            document.querySelectorAll('.sidebar-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelector(`button[onclick="scrollToSection('${activeId}')"]`)?.classList.add('active');
-        }
-
-        // Update sidebar on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('.scroll-section');
-            let currentSection = sections[0].id;
-            
-            sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top <= 150) {
-                    currentSection = section.id;
-                }
-            });
-            
-            updateSidebarButtons(currentSection);
-        });
-
-        // Smooth scroll para todos los enlaces
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }
-            });
-        });
-
-        // Form submission
-        document.querySelector('form')?.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('¡Mensaje enviado exitosamente! Nos comunicaremos pronto.');
-            this.reset();
-        });
-    </script>
+    <script src="src/js/main.js"></script>
+    <script src="src/js/form.js"></script>
+    <script src="src/js/directivas.js"></script>
+    <script src="src/js/eventos.js"></script>
+    <script src="src/js/monitoreo.js"></script>
+    <script src="src/js/faltas.js"></script>
+    <script src="src/js/reportes.js"></script>
+    <script src="src/js/recursos.js"></script>
 
 
 
