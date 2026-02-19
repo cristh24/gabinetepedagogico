@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom components for reusable styles */
+@layer components {
+  .hero-gradient {
+    @apply bg-gradient-to-br from-primary-dark to-primary-main;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .card-hover:hover {
+    @apply -translate-y-1 shadow-2xl;
+  }
+
+  .section-title {
+    @apply relative pb-4 border-b-4 border-primary-main;
+  }
+
+  .sidebar-btn {
+    @apply transition-all duration-300 ease-in-out;
+    border-left: 4px solid transparent;
+    padding-left: 1rem;
+  }
+
+  .sidebar-btn.active {
+    @apply bg-primary-light border-l-primary-main text-primary-dark font-bold;
+  }
+
+  .sidebar-btn:hover {
+    @apply bg-indigo-50;
+  }
+
+  .section-image {
+    @apply min-h-[300px] bg-cover bg-center rounded-lg shadow-lg;
+  }
+
+  .formal-line {
+    @apply border-t-2 border-primary-dark my-8;
+  }
+}

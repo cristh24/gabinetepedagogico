@@ -1,0 +1,14 @@
+{
+  "name": "gabinete-pedagogico",
+  "version": "1.0.0",
+  "description": "Gabinete Pedagógico - UPEU",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./src/output.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.35",
+    "autoprefixer": "^10.4.17"
+  }
+}
