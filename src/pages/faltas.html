@@ -9,48 +9,56 @@
 </head>
 <body class="bg-white text-gray-900 font-sans">
 
-    <header class="bg-brand text-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <!-- Header Superior -->
-            <div class="py-4 flex items-center justify-between">
+    <header class="bg-brand text-white shadow-lg sticky top-0 z-40">
+        <div class="max-w-full mx-auto px-6 py-6">
+            <div class="flex items-center justify-between">
                 <a href="../../index.html" class="hover:opacity-90 transition">
-                    <h1 class="text-2xl font-bold">Gabinete Pedagógico</h1>
-                    <p class="text-white opacity-80 text-xs mt-1">Universidad Peruana Unión - Gestión Académica</p>
+                    <h1 class="text-3xl font-bold">Gabinete Pedagógico</h1>
+                    <p class="text-white opacity-80 text-sm mt-1">Universidad Peruana Unión - Gestión Académica</p>
                 </a>
-                <a href="../../index.html" class="px-4 py-2 bg-white text-brand rounded font-medium hover:bg-gray-100 transition text-sm">
+                <a href="../../index.html" class="px-6 py-2 bg-white text-brand rounded-lg font-semibold hover:bg-opacity-90 transition">
                     <i class="fas fa-home mr-2"></i>Inicio
                 </a>
             </div>
-            
-            <!-- Navbar de Navegación -->
-            <nav class="border-t border-white border-opacity-20 py-2 flex flex-row items-center gap-2 overflow-x-auto">
-                <a href="directivas.html" class="text-white font-medium hover:opacity-80 transition text-xs px-2 py-2 whitespace-nowrap">
-                    <i class="fas fa-file-alt mr-1"></i>Directivas
-                </a>
-                <a href="eventos.html" class="text-white font-medium hover:opacity-80 transition text-xs px-2 py-2 whitespace-nowrap">
-                    <i class="fas fa-calendar mr-1"></i>Eventos
-                </a>
-                <a href="monitoreo.html" class="text-white font-medium hover:opacity-80 transition text-xs px-2 py-2 whitespace-nowrap">
-                    <i class="fas fa-eye mr-1"></i>Monitoreo
-                </a>
-                <a href="faltas.html" class="text-white font-medium hover:opacity-80 transition text-xs px-2 py-2 whitespace-nowrap">
-                    <i class="fas fa-clock mr-1"></i>Faltas
-                </a>
-                <a href="reportes.html" class="text-white font-medium hover:opacity-80 transition text-xs px-2 py-2 whitespace-nowrap">
-                    <i class="fas fa-chart-bar mr-1"></i>Reportes
-                </a>
-                <a href="recursos.html" class="text-white font-medium hover:opacity-80 transition text-xs px-2 py-2 whitespace-nowrap">
-                    <i class="fas fa-book mr-1"></i>Recursos
-                </a>
-            </nav>
         </div>
     </header>
 
-    <!-- Contenido Principal -->
-    <main class="max-w-7xl mx-auto px-6 py-12">
+    <div class="flex min-h-screen bg-gray-50">
+        <!-- Sidebar Vertical -->
+        <aside class="w-64 bg-gradient-to-b from-slate-800 to-slate-900 shadow-xl sticky top-24 h-fit py-6 z-30">
+            <nav class="space-y-1 px-4">
+                <a href="directivas.html" class="flex items-center gap-3 w-full px-4 py-3 rounded-lg text-gray-200 font-medium transition hover:bg-slate-700 hover:text-white">
+                    <i class="fas fa-file-alt text-lg"></i>
+                    <span>Directivas y Lineamientos</span>
+                </a>
+                <a href="eventos.html" class="flex items-center gap-3 w-full px-4 py-3 rounded-lg text-gray-200 font-medium transition hover:bg-slate-700 hover:text-white">
+                    <i class="fas fa-calendar text-lg"></i>
+                    <span>Eventos Académicos</span>
+                </a>
+                <a href="monitoreo.html" class="flex items-center gap-3 w-full px-4 py-3 rounded-lg text-gray-200 font-medium transition hover:bg-slate-700 hover:text-white">
+                    <i class="fas fa-eye text-lg"></i>
+                    <span>Monitoreo y Acompañamiento</span>
+                </a>
+                <a href="faltas.html" class="flex items-center gap-3 w-full px-4 py-3 rounded-lg bg-brand text-white font-medium transition hover:bg-opacity-90 shadow-md">
+                    <i class="fas fa-clock text-lg"></i>
+                    <span>Faltas y Tardanzas</span>
+                </a>
+                <a href="reportes.html" class="flex items-center gap-3 w-full px-4 py-3 rounded-lg text-gray-200 font-medium transition hover:bg-slate-700 hover:text-white">
+                    <i class="fas fa-chart-bar text-lg"></i>
+                    <span>Reportes Generales</span>
+                </a>
+                <a href="recursos.html" class="flex items-center gap-3 w-full px-4 py-3 rounded-lg text-gray-200 font-medium transition hover:bg-slate-700 hover:text-white">
+                    <i class="fas fa-book text-lg"></i>
+                    <span>Recursos</span>
+                </a>
+            </nav>
+        </aside>
 
-        <!-- Sección Faltas y Tardanzas -->
-        <section class="mb-16">
+        <!-- Contenido Principal -->
+
+        <main class=\"flex-1 px-8 py-12\">
+            <!-- Sección Faltas y Tardanzas -->
+            <section class=\"mb-16\">
             <h1 class="text-4xl font-bold text-brand mb-8">Faltas y Tardanzas Docentes</h1>
             
             <div class="bg-white p-8 rounded border border-brand mb-8">
@@ -107,10 +115,11 @@
                     <li>• Tres inasistencias sin justificación pueden resultar en proceso disciplinario</li>
                 </ul>
             </div>
-    </main>
+        </section>
+        </main>
+    </div>
 
-    <footer class="bg-brand text-white py-12 mt-20">>
-        <div class="max-w-7xl mx-auto px-6">
+    <footer class="bg-brand text-white py-12 mt-20">        <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-8 mb-10">
                 <div>
                     <h3 class="font-bold text-xl mb-4">Gabinete Pedagógico</h3>
